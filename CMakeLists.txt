@@ -24,10 +24,10 @@ catkin_package(
 add_definitions(-DSBA_CHOLMOD)
 
 # SBA library
-add_library(sba src/sba.cpp src/spa.cpp src/spa2d.cpp src/csparse.cpp src/proj.cpp src/node.cpp src/sba_file_io.cpp)
+add_library(sba src/sba.cpp src/spa.cpp src/spa2d.cpp src/csparse.cpp src/proj.cpp src/node.cpp src/sba_file_io.cpp src/visualization.cpp)
 #rosbuild_add_compile_flags(sba ${SSE_FLAGS})
 target_link_libraries(sba ${SuiteSparse_LIBRARIES})
-
+# add_executable(subscriber_node src/nodes/sba_from_file.cpp)
 install(DIRECTORY include/sparse_bundle_adjustment/
         DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
 

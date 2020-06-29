@@ -36,7 +36,7 @@ void drawGraph(const SysSBA &sba, const ros::Publisher &camera_pub,
   point_marker.color.r = 1.0f;
   point_marker.color.g = 0.0f;
   point_marker.color.b = 0.0f;
-  point_marker.color.a = 0.5f;
+  point_marker.color.a = 1.0f;
   point_marker.scale.x = 0.02;
   point_marker.scale.y = 0.02;
   point_marker.scale.z = 0.02;
@@ -50,10 +50,11 @@ void drawGraph(const SysSBA &sba, const ros::Publisher &camera_pub,
       const Vector4d &pt = sba.tracks[i].point;
       point_marker.colors[ii].r = 1.0f;
       if (bicolor > 0 && i >= bicolor)
-	point_marker.colors[ii].g = 1.0f;
+	      point_marker.colors[ii].g = 1.0f;
       else
-	point_marker.colors[ii].g = 0.0f;
+	      point_marker.colors[ii].g = 0.0f;
       point_marker.colors[ii].b = 0.0f;
+      point_marker.colors[ii].a = 1.0f;
       point_marker.points[ii].x = pt(2);
       point_marker.points[ii].y = -pt(0);
       point_marker.points[ii].z = -pt(1);

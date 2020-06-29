@@ -13,5 +13,7 @@
   <depend>liblapack-dev</depend>
   <depend>libblas-dev</depend>
   <depend>suitesparse</depend>
+  <depend>std_msgs</depend>
+  <depend>visualization_msgs</depend>
 
 </package>
